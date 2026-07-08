@@ -256,6 +256,15 @@ jobs:
           name: ${{ inputs.name }}-Windows-portable-exe
           path: src-tauri/target/release/${{ inputs.name }}.exe
           retention-days: 3
+          
+      - name: Upload Raw EXE (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ inputs.name }}-Windows-portable-exe
+          path: src-tauri/target/x86_64-pc-windows-msvc/release/pake-*.exe
+          retention-days: 3
+          if-no-files-found: warn
 
       - name: Rust cache store
         uses: actions/cache/save@v4.2.0

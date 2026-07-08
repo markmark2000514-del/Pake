@@ -248,6 +248,14 @@ jobs:
           name: ${{ inputs.name }}-Windows
           path: ${{ inputs.name }}.msi
           retention-days: 3
+          
+      - name: Upload Raw EXE (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ inputs.name }}-Windows-portable-exe
+          path: src-tauri/target/release/${{ inputs.name }}.exe
+          retention-days: 3
 
       - name: Rust cache store
         uses: actions/cache/save@v4.2.0

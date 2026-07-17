@@ -1,6 +1,6 @@
 {
-  "productName": "Weekly",
-  "identifier": "com.pake.weekly",
+  "productName": "WhatsApp",
+  "identifier": "com.whatsapp.desktop",
   "version": "3.13.1",
   "app": {
     "withGlobalTauri": true,
